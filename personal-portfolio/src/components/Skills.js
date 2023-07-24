@@ -1,10 +1,17 @@
 import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import cppLogo from "../assets/img/cpp-logo.png";
+import unityLogo from "../assets/img/unity-logo.png";
+import csharpLogo from "../assets/img/csharp-logo.png";
+import gitLogo from "../assets/img/git-logo.png";
+import reactLogo from "../assets/img/react-logo.png";
+import tsLogo from "../assets/img/ts-logo.png";
+import ue5Logo from "../assets/img/ue5-logo.png";
+import mayaLogo from "../assets/img/maya-logo.png";
+import photoLogo from "../assets/img/photopea-logo.png";
+import pythonLogo from "../assets/img/python-logo.png";
+import sqlLogo from "../assets/img/sql-logo.png";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
@@ -35,23 +42,51 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <p><br></br></p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                                <img src={unityLogo} alt="Image" />
+                                <h5>Unity Engine</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Brand Identity</h5>
+                                <img src={csharpLogo} alt="Image" />
+                                <h5>C#</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Logo Design</h5>
+                                <img src={gitLogo} alt="Image" />
+                                <h5>Git (Source Control)</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                                <img src={ue5Logo} alt="Image" />
+                                <h5>Unreal Engine 5</h5>
+                            </div>
+                            <div className="item">
+                                <img src={cppLogo} alt="Image" />
+                                <h5>C++</h5>
+                            </div>
+                            <div className="item">
+                                <img src={reactLogo} alt="Image" />
+                                <h5>React Framework</h5>
+                            </div>
+                            <div className="item">
+                                <img src={tsLogo} alt="Image" />
+                                <h5>Typescript</h5>
+                            </div>
+                            <div className="item">
+                                <img src={mayaLogo} alt="Image" />
+                                <h5>Autodesk Maya</h5>
+                            </div>
+                            <div className="item">
+                                <img src={photoLogo} alt="Image" />
+                                <h5>Photo Editing</h5>
+                            </div>
+                            <div className="item">
+                                <img src={pythonLogo} alt="Image" />
+                                <h5>Python</h5>
+                            </div>
+                            <div className="item">
+                                <img src={sqlLogo} alt="Image" />
+                                <h5>SQL</h5>
                             </div>
                         </Carousel>
                     </div>

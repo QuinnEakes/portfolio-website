@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/transpImage.svg";
+import resumePDF from "../assets/img/ResumeQE.pdf"
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -47,6 +48,33 @@ export const Banner = () => {
     }
   }
 
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch(resumePDF).then(response => {
+        response.blob().then(blob => {
+            // Creating new object of PDF file
+            const fileURL = window.URL.createObjectURL(blob);
+            // Setting various property values
+            let alink = document.createElement('a');
+            alink.href = fileURL;
+            alink.download = 'ResumeQE.pdf';
+            alink.click();
+        })
+    })
+}
+  // <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "UI/UX Designer", "Unity Developer" ]'><span className="wrap">{text}</span></span>
+  // <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+
+  /*
+    <Col xs={12} md={6} xl={5}>
+      <TrackVisibility>
+       {({ isVisible }) =>
+          <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+            <img src={headerImg} alt="Header Img"/>
+          </div>}
+      </TrackVisibility>
+    </Col> 
+  */
   return (
     <section className="banner" id="home">
       <Container>
@@ -55,20 +83,18 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Judy`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                <button className="vvd" onClick={onButtonClick}>
+                  <span className="tagline">Full Resume Download</span>
+                </button>
+                <h1>{`Hi! I'm Quinn`} </h1>
+                  <p>I am a Unity Developer with four years of experience. I excel with UI/UX design, in engine animation, and working within cross discipline teams.</p>
               </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
-                </div>}
-            </TrackVisibility>
+            <div>
+              <img src={headerImg} alt="Header Img"/>
+            </div>
           </Col>
         </Row>
       </Container>
